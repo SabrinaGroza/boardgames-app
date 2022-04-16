@@ -1,0 +1,20 @@
+<h1> Top games Online </h1>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Length</th>
+            <th>Max number of players</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let game of games">
+            <td>{{game.name}}</td>
+            <td>{{game.max_playtime}}</td>
+            <td>{{game.max_players}}</td>
+            <td><div [innerHTML]="game.description"></div></td>
+
+        </tr>
+    </tbody>
+</table>

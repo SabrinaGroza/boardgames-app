@@ -1,0 +1,34 @@
+<h1> My games </h1>
+<nav class="navbar">
+    <input class="form-control" type="text" name="name" [(ngModel)] ="name" (ngModelChange)="Search()"
+    placeholder="For which game are you looking for" aria-label="Search">
+</nav>
+<hr>
+<table id="games">
+   <tr>
+        <th *ngFor = "let column of headers">
+        {{column}}
+        </th>
+    </tr>
+
+    <!-- <tr *ngFor = "let row of rows">
+         <td *ngFor = "let column of headers">
+            {{row[column]}}
+        </td>
+    </tr> -->
+    <tbody>
+    <tr *ngFor = "let game of games; let i=index;">
+        <td>{{game.name}}</td>
+        <td>{{game.max_playtime}}</td>
+        <td>{{game.max_players}}</td>
+        <td>{{game.description}}</td>
+        <button class="delete"(click)="deleteGame(i)">Delete Game</button>
+   </tr>
+</tbody>
+</table>
+
+<input #name1 placeholder="Name">
+<input #length placeholder="Game length">
+<input #players placeholder="Max no. of players">
+<input #description placeholder="Description">
+<button (click)="addGame()">Add</button>
