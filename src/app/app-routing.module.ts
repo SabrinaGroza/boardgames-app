@@ -8,6 +8,7 @@ const routes: Routes = [
   {path: 'top-games',
     component: TopPlayersComponent,
   },
+  {path : 'index.html', component: HomeComponent},
   {path : '' , component: HomeComponent}
 ];
 
